@@ -1,0 +1,37 @@
+#!/bin/bash
+
+usage()
+{
+  printf 'Usage is not written yet.\n' 1>&2
+  exit 2
+}
+
+net=""
+
+while getopts "hn:" o; do
+  case "${o}" in
+    h) usage ;;
+    n) net="$OPTARG" ;;
+    ?) usage ;;
+  esac
+done
+shift $((OPTIND-1))
+if [ -n "$*" ]; then
+  printf 'There are unexpected arguments.\n' 1>&2
+  usage
+fi
+if [ -z "${net}" ]; then
+  printf "A '-n network' option is required.\n" 1>&2
+  exit 2
+elif [ "${net}" != 'main' -a "${net}" != 'test' ]; then
+  printf "The '-n network' option MUST be 'main' or 'test'\n" 1>&2
+  exit 2
+fi
+
+# CHANGE LINES BELOW vvvv
+printf 'Change these two lines with the commands you need to run the indexer using the config file\n' || exit 1
+printf "./wax${net}-fillgap.config.json.tmpl\n" || exit 1
+exit 1 # <--- Delete this line
+# CHANGE LINES ABOVE ^^^^
+
+exit 0
