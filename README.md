@@ -61,5 +61,5 @@ a different server.
 What this really needs is to be integrated into the base Hyperion repo.  I will work with Igor and/or the
 Rio team to accomplish this.
 I've used this for both Hyperion 3.1.4 and 3.3.5, and also for various ElasticSearch versions include 7.x and 8.0.
-It works well for me - and obviously your mileage may vary (someone please tell me a good European verstion of
+It works well for me - and obviously your mileage may vary (someone please tell me a good European version of
 that phrase).
